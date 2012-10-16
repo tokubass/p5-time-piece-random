@@ -20,6 +20,10 @@ our $VERSION = '0.01';
 our $FORMAT = '%Y-%m-%d %H:%M:%S';
 our $PLACEHOLDER = '?'; # todo
 
+sub strptime {
+    Time::Piece->localtime->strptime(@_);
+};
+
 sub new {
     my ($class, $arg)  = @_;
     Carp::croak 'please input start or end time' unless ($arg);
@@ -48,10 +52,10 @@ sub create_start {
     my @part = split('[- :]', $self->input_start );
     
     if ( @part == 6 ) {
-        return $self->start(Time::Piece->strptime($self->input_start, $FORMAT));
+        return $self->start(strptime($self->input_start, $FORMAT));
     }else{
         my $short_format = substr($FORMAT, 0, scalar @part * 3 );
-        my $tp = Time::Piece->strptime($self->input_start, $short_format); 
+        my $tp = strptime($self->input_start, $short_format); 
         $self->start( $tp );
     }
 
@@ -67,20 +71,20 @@ sub create_end {
     my @part = split('[- :]', $self->input_end );
     
     if ( @part == 6 ) {
-        return $self->end(Time::Piece->strptime($self->input_end, $FORMAT));
+        return $self->end(strptime($self->input_end, $FORMAT));
     }else{
-        push (@part, undef) while @part == 6;
+        push(@part, undef) while @part == 6;
         my %hash;
         @hash{qw/Y m d H M S/} = @part; 
         $hash{m} ||= 12;
-        $hash{d} ||= Time::Piece->strptime("$part[0]-12", '%Y-%m')->month_last_day;
+        $hash{d} ||= strptime("$part[0]-12", '%Y-%m')->month_last_day;
         $hash{H} ||= 23;
         $hash{M} ||= 59;
         $hash{S} ||= 59;
 
         my $date = join('-', @hash{qw/Y m d/});
         my $time = join(':', @hash{qw/H M S/});
-        return $self->end( Time::Piece->strptime("$date $time", $FORMAT) ); 
+        return $self->end( strptime("$date $time", $FORMAT) ); 
     }
 }
 
