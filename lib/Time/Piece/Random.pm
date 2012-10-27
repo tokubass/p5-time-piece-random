@@ -28,8 +28,11 @@ sub strptime {
 sub new {
     my ($class, $arg)  = @_;
     Carp::croak 'please input start or end time' unless ($arg);
-
     my $self = bless { }, $class;
+
+    if ( $arg =~ /\A[0-9 :-]+\z/ ) {
+        $arg = { start => $arg, end => $arg };
+    }
 
     if ( ref $arg eq 'HASH' ) {
         Carp::croak 'please input start or end time' if ( !$arg->{start} && !$arg->{end} );
