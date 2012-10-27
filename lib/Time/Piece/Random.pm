@@ -115,10 +115,6 @@ sub get_multi {
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
-
-Perhaps a little code snippet.
-
     use Time::Piece::Random;
 
     # return Time::Piece Object
@@ -137,11 +133,6 @@ Perhaps a little code snippet.
     my $tp2 = $tp + ONE_DAY;
     Time::Piece::Random->new({ start => $tp, end => tp2 });
 
-
-=head1 EXPORT
-
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
 
 =head1 SUBROUTINES/METHODS
 
@@ -164,46 +155,9 @@ if you don't export anything, such as for a purely object-oriented module.
 
 Kouji Tominaga, C<< <tokubass at cpan.org> >>
 
-=head1 BUGS
+=head1 SEE ALSO
 
-Please report any bugs or feature requests to C<bug-time-piece-random at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Time-Piece-Random>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-
-
-
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Time::Piece::Random
-
-
-You can also look for information at:
-
-=over 4
-
-=item * RT: CPAN's request tracker (report bugs here)
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Time-Piece-Random>
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Time-Piece-Random>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Time-Piece-Random>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Time-Piece-Random/>
-
-=back
-
-
-=head1 ACKNOWLEDGEMENTS
+L<http://search.cpan.org/perldoc?DateTime%3A%3AEvent%3A%3ARandom>
 
 
 =head1 LICENSE AND COPYRIGHT
