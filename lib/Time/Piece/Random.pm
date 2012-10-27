@@ -3,9 +3,10 @@ package Time::Piece::Random;
 use 5.006;
 use strict;
 use warnings;
-use Time::Piece;
+use Time::Piece 1.20;
 use Carp ();
 use Class::Accessor::Lite ( rw => [qw/ format placeholder start end input_start input_end /] );
+
 =head1 NAME
 
 Time::Piece::Random - create Time::Piece object at random in the specified range
