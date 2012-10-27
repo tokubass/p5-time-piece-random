@@ -122,7 +122,7 @@ sub get_multi {
 
     # return Time::Piece Object
     Time::Piece::Random->new({ start => '2012-01-01', end =>'2012-02-01' })->get; # 2012-01-01 00:00:00 ~ 2012-02-01 23:59:59
-    Time::Piece::Random->new({ start => '2012-01-01'})->get; 2012-05-15 00:00:00 ~ now
+    Time::Piece::Random->new({ start => '2012-01-01'})->get; 2012-01-01 00:00:00 ~ now
     Time::Piece::Random->new({ end => '2012-05-15' })->get; now ~ 2012-05-15 23:59:59
     Time::Piece::Random->new('2012-05-01')->get; # 2012-05-01 00:00:00 ~ 2012-05-01 23:59:59
     Time::Piece::Random->new('2012-05')->get;    # 2012-05-01 00:00:00 ~ 2012-05-31 23:59:59
